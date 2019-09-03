@@ -10,7 +10,7 @@ var stringifyJSON = function(obj) {
     for (var i = 0; i < obj.length; i++) {
       results.push(stringifyJSON(obj[i]));
     }
-    return '[' + results.join(',')  + ']';
+    return '[' + results.join(',') + ']';
   }
 
   if (obj && typeof obj === 'object') {
