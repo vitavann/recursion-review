@@ -10,13 +10,13 @@ var getElementsByClassName = function(className, node) {
     node = document.body;
   }
 
-  if (node.classList) {
-    if (node.classList.contains(className)) {
+  if(node.classList) {
+    if(node.classList.contains(className)) {
       res.push(node);
     }
   }
 
-  if (node.hasChildNodes()) {
+  if(node.hasChildNodes()) {
     var children = node.childNodes;
     for (var i = 0; i < children.length; i++) {
       res = res.concat(getElementsByClassName(className, children[i]));
