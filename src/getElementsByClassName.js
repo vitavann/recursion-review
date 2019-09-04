@@ -10,17 +10,15 @@ var getElementsByClassName = function(className, node) {
     node = document.body;
   }
 
-  if (node.classList) {
-    if (node.classList.contains(className)) {
-      res.push(node);
-    }
+  if (node.classList && node.classList.contains(className)) {
+    res.push(node);
   }
 
   if (node.hasChildNodes()) {
     var children = node.childNodes;
-    for (var i = 0; i < children.length; i++) {
-      res = res.concat(getElementsByClassName(className, children[i]));
-    }
+    children.forEach(function(child) {
+      res = res.concat(getElementsByClassName(className, child));
+    });
   }
 
   return res;
